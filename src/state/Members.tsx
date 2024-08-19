@@ -6,5 +6,5 @@ import {atom} from "jotai";
 }
 
 
-export const TeamsState = atom<Members>({teams:[]});
+export const TeamMembers = atom<Members>({teams:[]});
 

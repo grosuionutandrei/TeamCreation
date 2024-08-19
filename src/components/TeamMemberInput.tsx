@@ -1,17 +1,18 @@
 import {NameProp} from "../type/NameProp.tsx";
 import {useAtom} from "jotai/index";
-import {TeamsState} from "../state/Teams.tsx";
+import {TeamMembers} from "../state/Members.tsx";
 
 
 export function TeamMemberInput({model}: NameProp<string>) {
-    const [members, setMembers] = useAtom(TeamsState);
+    const [members, setMembers] = useAtom(TeamMembers);
 
     function addTeamMember(value: string) {
-        setMembers({teams: [...members.teams, value]});
+        setMembers({teams: [...members.teams,value]});
+
     }
 
     const removeTeamMember = (value: string) => {
-        const removedMembers = members.teams.filter((item) => item !== value);
+        const removedMembers = members.teams.filter((item:string) => item !== value);
         setMembers({teams: [...removedMembers]});
     }
     return (

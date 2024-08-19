@@ -5,7 +5,7 @@ export interface TeamName{
 
 
 export interface  Team extends TeamName{
-    members:[],
-    answers:string,
+    members:string[],
+    answers:string[],
     locations:Location[]
 }
